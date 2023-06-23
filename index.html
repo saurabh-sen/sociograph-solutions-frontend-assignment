@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="handleOnLoad()">
+    <div class="container">
+      <h1>Persons List</h1>
+
+      <section id="persons-section">
+        <h2>Persons</h2>
+        <div class="utility">
+          <div id="sort-by">
+            <label for="sort-by-select">Sort By DOB:</label>
+            <select id="sort-by-select" onchange="handleSortByAge(event)">
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </div>
+          <input type="text" id="search-input" placeholder="Search by name..." onchange="handleSeachByName(event)" />
+        </div>
+        <div id="persons-list"></div>
+        <div id="pagination">
+            <button id="prev-btn" onclick="handlePrevBtnClick()" disabled>Prev</button>
+            <button id="next-btn" onclick="handleNextBtnClick()">Next</button>
+        </div>
+      </section>
+
+      <section id="add-person-section">
+        <h2>Add Person</h2>
+        <form id="person-form">
+          <div class="form-group">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" />
+            <div id="first-name-error" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" />
+            <div id="last-name-error" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" />
+            <div id="dob-error" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+            <div id="email-error" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" />
+            <div id="mobile-error" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" />
+            <div id="city-error" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="zipcode">Pincode/Zipcode:</label>
+            <input type="text" id="zipcode" name="zipcode" />
+            <div id="zipcode-error" class="error"></div>
+          </div>
+          <button type="submit">Add Person</button>
+        </form>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
