@@ -209,7 +209,7 @@ function renderPersons(filteredPersons) {
   personsList.innerHTML = "";
 
   if (filteredPersons) {
-    for (let i = 0; i < filteredPersons.length; i++) {
+    for (let i = 0; i < 3 && i < filteredPersons.length; i++) {
       const person = filteredPersons[i];
 
       const card = document.createElement("div");
